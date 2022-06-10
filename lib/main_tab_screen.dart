@@ -30,44 +30,41 @@ class _MainTabScreenState extends State<MainTabScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            'Beranda',
-            style: TextStyle(
-                color: Colors.blueGrey,
-                fontSize: 20,
-                fontWeight: FontWeight.bold),
-          ),
-          // ignore: prefer_const_constructors
-          backgroundColor: Colors.white,
-          // ignore: prefer_const_literals_to_create_immutables
-          iconTheme: const IconThemeData(color: Colors.blueGrey),
-          actions: [
-            Container(
-              margin: const EdgeInsets.only(right: 10),
-              child: const Icon(Icons.light_mode),
-            ),
-          ],
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          'Beranda',
+          style: TextStyle(
+              color: Colors.blueGrey,
+              fontSize: 20,
+              fontWeight: FontWeight.bold),
         ),
-        body: WillPopScope(
-            onWillPop: onWillPop, child: body.elementAt(_selectedIndex)),
-        bottomNavigationBar: BottomNavigationBar(
-            selectedItemColor: Colors.blueGrey,
-            currentIndex: _selectedIndex,
-            onTap: _onTapNavBar,
-            // ignore: prefer_const_literals_to_create_immutables
-            items: [
-              const BottomNavigationBarItem(
-                  icon: Icon(Icons.home), label: 'Home'),
-              const BottomNavigationBarItem(
-                  icon: Icon(Icons.web), label: 'Portal'),
-              const BottomNavigationBarItem(
-                  icon: Icon(Icons.person), label: 'Profile')
-            ]),
+        // ignore: prefer_const_constructors
+        backgroundColor: Colors.white,
+        // ignore: prefer_const_literals_to_create_immutables
+        iconTheme: const IconThemeData(color: Colors.blueGrey),
+        actions: [
+          Container(
+            margin: const EdgeInsets.only(right: 10),
+            child: const Icon(Icons.light_mode),
+          ),
+        ],
       ),
+      body: WillPopScope(
+          onWillPop: onWillPop, child: body.elementAt(_selectedIndex)),
+      bottomNavigationBar: BottomNavigationBar(
+          selectedItemColor: Colors.blueGrey,
+          currentIndex: _selectedIndex,
+          onTap: _onTapNavBar,
+          // ignore: prefer_const_literals_to_create_immutables
+          items: [
+            const BottomNavigationBarItem(
+                icon: Icon(Icons.home), label: 'Home'),
+            const BottomNavigationBarItem(
+                icon: Icon(Icons.web), label: 'Portal'),
+            const BottomNavigationBarItem(
+                icon: Icon(Icons.person), label: 'Profile')
+          ]),
     );
   }
 
