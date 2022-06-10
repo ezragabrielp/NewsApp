@@ -43,12 +43,6 @@ class _MainTabScreenState extends State<MainTabScreen> {
         backgroundColor: Colors.white,
         // ignore: prefer_const_literals_to_create_immutables
         iconTheme: const IconThemeData(color: Colors.blueGrey),
-        actions: [
-          Container(
-            margin: const EdgeInsets.only(right: 10),
-            child: const Icon(Icons.light_mode),
-          ),
-        ],
       ),
       body: WillPopScope(
           onWillPop: onWillPop, child: body.elementAt(_selectedIndex)),
